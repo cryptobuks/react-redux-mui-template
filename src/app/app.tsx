@@ -5,7 +5,7 @@ import React from "react"
 import { Provider } from "react-redux"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { routes } from "../routes"
-import { store } from "../state"
+import { store } from "../store"
 import { Footer, Header } from "../views/components"
 
 const App: React.FC = () => (
@@ -13,20 +13,27 @@ const App: React.FC = () => (
     <ThemeProvider theme={store.getState().theme}>
       <CssBaseline />
       <Router>
-        <>
-          <Header />
-          <Box mx="auto" mt="70px" mb="70px" width="100%" maxWidth="1080px">
-            <Paper style={{ padding: "16px" }}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mx={2}
+          boxShadow={2}
+          borderRadius={8}
+        >
+          <Box width="100%" maxWidth="1080px" bgcolor="background.paper">
+            <Header />
+            <Box p={2}>
               <Switch>
                 {routes.map((route, index) => (
                   // @ts-ignore
                   <Route key={index} {...route} />
                 ))}
               </Switch>
-            </Paper>
+            </Box>
+            <Footer />
           </Box>
-          <Footer />
-        </>
+        </Box>
       </Router>
     </ThemeProvider>
   </Provider>

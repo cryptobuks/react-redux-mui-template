@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core"
 import { unstable_Box as Box } from "@material-ui/core/Box"
 import React from "react"
-import { Buttons } from "./components"
+import { RightSideControls } from "./components"
 
 interface IProps {
   loggedIn: boolean
@@ -21,7 +21,11 @@ export const Header: React.FC<IProps> = (props) => {
               React-Redux-Template
             </Typography>
           </Box>
-          <Buttons loggedIn={loggedIn} handleLogout={handleLogout} handleLogin={handleLogin} />
+          <RightSideControls
+            loggedIn={loggedIn}
+            handleLogout={handleLogout}
+            handleLogin={handleLogin}
+          />
         </Toolbar>
       </AppBar>
     </header>

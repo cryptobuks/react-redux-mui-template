@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
-import { actions } from "../../../state"
-import { IRootState } from "../../../state/typings"
+import { actions } from "../../../store"
+import { IRootState } from "../../../store/typings"
 import { Home } from "./home"
 
 const mapState = (state: IRootState) => {

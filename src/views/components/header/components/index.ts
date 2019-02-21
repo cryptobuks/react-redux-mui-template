@@ -1,1 +1,1 @@
-export * from "./buttons"
+export * from "./right-side-controls"

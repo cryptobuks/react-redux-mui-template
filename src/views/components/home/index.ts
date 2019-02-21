@@ -1,1 +1,1 @@
-export * from "./connected"
+export * from "./connect"
